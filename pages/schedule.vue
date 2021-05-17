@@ -50,16 +50,6 @@ export default {
     await store.dispatch('tasks/filterTask', new Date().getDay() - 1)
     await store.dispatch('citizens/get')
   },
-  watch: {
-    selectedDay() {
-      this.filter()
-      // this.$store.dispatch('tasks/filterTask', { day: this.selectedDay })
-    },
-    selectedCitizen() {
-      this.filter()
-      // this.$store.dispatch('tasks/filterTask', { id: this.selectedCitizen })
-    },
-  },
   computed: {
     ...mapState('citizens', {
       citizenList: (state) => {
@@ -71,6 +61,16 @@ export default {
         return state.taskFiltered
       },
     }),
+  },
+  watch: {
+    selectedDay() {
+      this.filter()
+      // this.$store.dispatch('tasks/filterTask', { day: this.selectedDay })
+    },
+    selectedCitizen() {
+      this.filter()
+      // this.$store.dispatch('tasks/filterTask', { id: this.selectedCitizen })
+    },
   },
   methods: {
     update() {

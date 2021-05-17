@@ -27,8 +27,7 @@
           >
           <input
             type="text"
-            id="full-name"
-            name="full-name"
+            v-model="login.username"
             class="
               w-full
               bg-white
@@ -54,8 +53,7 @@
           >
           <input
             type="password"
-            id="email"
-            name="email"
+            v-model="login.password"
             class="
               w-full
               bg-white
@@ -88,7 +86,7 @@
             sm:rounded-lg
             text-lg
           "
-          @click="login"
+          @click="userLogin"
         >
           Login
         </button>
@@ -102,8 +100,16 @@
 
 <script>
 export default {
+  data() {
+    return {
+      login: {
+        username: '',
+        password: '',
+      },
+    }
+  },
   methods: {
-    login() {
+    userLogin() {
       this.$router.push({
         path: '/schedule',
       })
