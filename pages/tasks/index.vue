@@ -1,6 +1,6 @@
 <template>
   <div class="px-5 pt-5 mx-40">
-    <button
+    <!-- <button
       class="
         border-b
         sm:rounded-lg
@@ -20,7 +20,7 @@
       @click="goNew"
     >
       Add
-    </button>
+    </button> -->
 
     <div class="flex flex-col">
       <div class="-my-2 overflow-x-auto sm:-mx-6 lg:-mx-8">
